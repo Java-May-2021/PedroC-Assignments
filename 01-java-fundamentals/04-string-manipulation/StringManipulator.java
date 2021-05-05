@@ -7,6 +7,10 @@ public class StringManipulator {
         return stringA.indexOf(charA);
     }
 
+    public Integer getIndexOrNull(String stringA, String stringB) {
+        return stringA.indexOf(stringB);
+    }
+
     public String concatSubstring(String stringA, int start, int end, String stringB) {
         return stringA.substring(start, end) + stringB;
     }

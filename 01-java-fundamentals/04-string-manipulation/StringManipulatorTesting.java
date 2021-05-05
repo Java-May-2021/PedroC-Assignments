@@ -3,6 +3,7 @@ public class StringManipulatorTesting {
         StringManipulator sm = new StringManipulator();
         System.out.println(sm.trimAndConcat(" Hello ", " World "));
         System.out.println(sm.getIndexOrNull("HelloWorld", 'o'));
+        System.out.println(sm.getIndexOrNull("HelloWorld", "llo"));
         System.out.println(sm.concatSubstring("Hello", 1, 2, "world"));
     }
 }
