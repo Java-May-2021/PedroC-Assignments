@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+div {
+	display: inline-block;
+	margin: 30px;
+}
+
+div.date {
+	color: blue;
+}
+
+div.time {
+	color: green;
+}
