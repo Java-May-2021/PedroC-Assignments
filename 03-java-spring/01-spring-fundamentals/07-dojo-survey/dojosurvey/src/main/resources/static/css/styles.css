@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+* {
+	background: black;
+	color: white;
+}
+
+form, div.result {
+	width: 350px;
+	border: 1px solid white;
+	margin: 30px auto;
+	padding: 30px;
+}
+
+div.row {
+	padding: 10px;
+}
+
+div.col-left {
+	display: inline-block;
+	width: 150px;
+}
+
+div.col-right {
+	display: inline-block;
+	width: 150px;
+}
+
+div.col-wide {
+	width: 300px;
+}
+
+input, select {
+	width: 150px;
+}
+
+textarea {
+	width: 300px;
+}
+
+button {
+	float: right;
+}
+
+h3 {
+	text-decoration: underline;
+}
