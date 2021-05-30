@@ -3,6 +3,9 @@ package com.pcalixto.show.services;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.pcalixto.show.models.Book;
 import com.pcalixto.show.repositories.BookRepository;
 
@@ -20,6 +23,15 @@ private final BookRepository bookRepository;
  }
  // creates a book
  public Book createBook(Book b) {
+     return bookRepository.save(b);
+ }
+ // updates a book
+ public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
+	 Book b = bookRepository.findById(id).orElse(null);
+	 b.setTitle(title);
+	 b.setDescription(desc);
+	 b.setLanguage(lang);
+	 b.setNumberOfPages(numOfPages);
      return bookRepository.save(b);
  }
  // deletes a book
