@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+form {
+	display:inline-block;
+}
+
+th, td {
+	padding: 7px 10px;
+}
+
+.hiddenButton {
+	display: none;
+}
