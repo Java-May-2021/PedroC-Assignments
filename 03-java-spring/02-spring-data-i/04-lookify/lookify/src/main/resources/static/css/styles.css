@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+* {
+	background: black;
+	color: white;
+}
+
+body {
+	padding: 10px;
+}
+
+table {
+	margin-top: 16px;
+}
+td {
+	padding: 10px;
+}
+
+/* Index */
+.landingPageMessage {
+	width: 400px;
+	margin:100px auto;
+	text-align: center;
+}
+
+/* Dashboard */
+.navBarCell {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.dashboardCell.searchMode,
+.searchCell.dashboardMode {
+	display: none;
+}
+
