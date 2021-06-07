@@ -91,11 +91,14 @@ public class MainController {
 		for (Person p : persons) {
         	boolean addPerson = true;
 			for (License l : licenses) {
-	            if (p.getId().equals(l.getId())) {
+            	// System.out.println(l.getPerson().getId());
+	            if (p.getId().equals(l.getPerson().getId())) {
 	            	addPerson = false;
 	            }
 	        }
 			if (addPerson) {
+            	// System.out.println("Add:");
+            	// System.out.println(p.getId());
 	        	eligiblePersons.add(p);			
 			}
         }
