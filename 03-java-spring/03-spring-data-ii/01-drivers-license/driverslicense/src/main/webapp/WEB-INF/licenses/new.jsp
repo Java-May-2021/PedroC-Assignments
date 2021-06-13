@@ -41,8 +41,7 @@
 	    <p>
 	        <form:label path="expiration">Expiration Date</form:label>
 	        <form:errors path="expiration"/>
-			<fmt:formatDate value="${license.expiration}" var="dateString" pattern="dd/MM/yyyy" />
-	        <form:input type="date" path="expiration" value="${dateString}" />
+	        <form:input type="date" path="expiration"/>
 	    </p>
 	    <input type="submit" value="Create"/>
 	</form:form>
