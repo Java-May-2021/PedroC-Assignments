@@ -2,7 +2,6 @@ package com.pcalixto.driverslicense.models;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -11,11 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
-import com.sun.istack.NotNull;
 
 @Entity()
 @Table(name="hmk_java030301_licenses")
@@ -27,13 +25,14 @@ public class License {
 	@Size(min = 2, max = 2)
 	private String state;
 
-	@Column(nullable = false)
+	// @Column(nullable = false)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull()
+	@NotNull(message="Expiration cannot be nothing")
 	private Date expiration;
 
 	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="person_id", nullable=false)
+	@NotNull(message="Person cannot be nothing")
 	private Person person;
 
 	public Long getId() {

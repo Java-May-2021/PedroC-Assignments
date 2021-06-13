@@ -27,5 +27,9 @@ public class PersonService {
 	public Person getPerson(Long id) {
 		return this.repo.findById(id).orElse(null);
 	}
+	
+	public List<Person> listWithoutLicense() {
+		return repo.findByNoLicense();
+	}
 
 }

@@ -50,7 +50,8 @@ public class MainController {
 	@GetMapping("/licenses/new")
 	public String newLicense(@ModelAttribute("license") License license,
 							 Model viewmodel) {
-		List<Person> persons = getPersonsWithNoLicense();
+		// List<Person> persons = getPersonsWithNoLicense();
+		List<Person> persons = personService.listWithoutLicense();
 		viewmodel.addAttribute("persons", persons);
 		Map<String,String> states = getStateList();
 		viewmodel.addAttribute("states", states);
@@ -62,7 +63,8 @@ public class MainController {
 							 BindingResult result,
 							 Model viewmodel) {
 		if (result.hasErrors()) {
-			List<Person> persons = getPersonsWithNoLicense();
+			// List<Person> persons = getPersonsWithNoLicense();
+			List<Person> persons = personService.listWithoutLicense();
 			viewmodel.addAttribute("persons", persons);
 			Map<String,String> states = getStateList();
 			viewmodel.addAttribute("states", states);
