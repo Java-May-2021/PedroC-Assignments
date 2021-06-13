@@ -25,9 +25,11 @@
 	        <form:label path="person">Person</form:label>
 	        <form:errors path="person"/>
 			<form:select path="person">
-			   <form:option value="0" label="Please select a person"/>
+			   <option value="0" label="Please select a person"/>
 				<c:forEach var="person" items="${persons}">
-				   <form:option value="${person.id}" label="${person.firstname} ${person.lastname}"/>
+				   <option value="${person.id}" ${person.id == selectedPerson ? 'selected="selected"' : ''} >
+				     ${person.firstname} ${person.lastname}
+				   </option>
 				</c:forEach>
 			</form:select>
 	    </p>

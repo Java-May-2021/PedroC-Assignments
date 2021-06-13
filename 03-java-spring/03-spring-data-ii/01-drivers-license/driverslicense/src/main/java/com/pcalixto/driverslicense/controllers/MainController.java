@@ -53,8 +53,11 @@ public class MainController {
 		// List<Person> persons = getPersonsWithNoLicense();
 		List<Person> persons = personService.listWithoutLicense();
 		viewmodel.addAttribute("persons", persons);
+
 		Map<String,String> states = getStateList();
 		viewmodel.addAttribute("states", states);
+		
+		viewmodel.addAttribute("selectedPerson", "");
 		return "/licenses/new.jsp";
 	}
 
@@ -66,8 +69,16 @@ public class MainController {
 			// List<Person> persons = getPersonsWithNoLicense();
 			List<Person> persons = personService.listWithoutLicense();
 			viewmodel.addAttribute("persons", persons);
+		
 			Map<String,String> states = getStateList();
 			viewmodel.addAttribute("states", states);
+			
+			Person selectedPerson = license.getPerson();
+			if (selectedPerson == null) {
+				viewmodel.addAttribute("selectedPerson", "");
+			} else {
+				viewmodel.addAttribute("selectedPerson", selectedPerson.getId());
+			}
 			return "/licenses/new.jsp";
 		} else {
 			licenseService.createLicense(license); 
