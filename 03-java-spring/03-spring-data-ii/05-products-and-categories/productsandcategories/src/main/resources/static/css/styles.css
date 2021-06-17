@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+* {
+	background-color: #cccccc;
+	color: black;
+}
+
+td {
+	vertical-align:top;
+	margin: 10px;
+}
