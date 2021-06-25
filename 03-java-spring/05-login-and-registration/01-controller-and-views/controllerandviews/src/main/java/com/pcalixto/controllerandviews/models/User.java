@@ -35,7 +35,7 @@ public class User {
 	private String password;
 	
 	@Transient
-    @Size(min=5, message="Password must contain at least 5 characters")
+    @Size(min=5, message="Password confirmation must contain at least 5 characters")
 	private String passwordConfirmation;
 	
 	@Column(updatable=false)
