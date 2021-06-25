@@ -31,7 +31,7 @@ public class UserController {
 		return "index.jsp";
 	}
 
-	@PostMapping("/registration")
+	@PostMapping("/")
 	public String index(@Valid @ModelAttribute("user") User user, 
 						BindingResult result, 
 						HttpSession session) {
@@ -60,5 +60,10 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
 
 }

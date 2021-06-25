@@ -4,6 +4,23 @@
 	background: #cccccc;
 }
 
+.app-header {
+	display: flex;
+}
+
+.app-header div {
+	flex: 50;
+	padding: 10px;
+}
+
+.app-name {
+	font-size: 30px;
+}
+
+.app-links {
+	text-align: right;
+}
+
 .wrapper {
 	display: flex;
 }
